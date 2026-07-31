@@ -21,6 +21,13 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage ("Deploy")
+        {
+            when {
+               branch 'main'
+            }
+             echo "Deploying to production"
+        }
 
              
         
