@@ -23,10 +23,11 @@ pipeline {
         }
         stage ("Deploy")
         {
-            steps {
+            
             when {
                branch 'main'
             }
+            steps {
              echo "Deploying to production"
         }
 
