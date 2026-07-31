@@ -14,7 +14,7 @@ pipeline {
             }
             post {
             success {
-                archieveArtifacts artifacts: '**/target/*.war'
+                archiveArtifacts artifacts: '**/target/*.war'
             }
             }
         }
