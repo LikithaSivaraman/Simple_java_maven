@@ -15,18 +15,12 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage ("Test") 
-        {
-            steps {
-                echo "Test"
-            }
-        }
-        stage ("Deploy")
-        {
-            steps {
-                echo "Deploy"
-            }
-        }
+        post {
+  success {
+    // One or more steps need to be included within each condition's block.
+  }
+}
+
     }
 
 }
