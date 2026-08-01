@@ -1,8 +1,7 @@
 pipeline {
 
-    agent {
-      label 'Agent1'
-    }
+    agent any
+    
     environment {
         APP_VERSION = '4.0.$BUILD_NUMBER'
     }
