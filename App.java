@@ -6,8 +6,9 @@ public class App {
 /*It starts*/
 
     public static void main(String[] args) {
-
+          /* Prints the statement*/
         System.out.println("Hello Jenkins Pipeline!");
+         System.out.println("Hello Jenkins Pipeline created!");
 
     }
 }
