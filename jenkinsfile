@@ -12,6 +12,7 @@ pipeline {
         {
             steps {
                 sh 'mvn clean package'
+                echo "$BUILD_NUMBER & $BUILD_ID"
             }
 
         }
