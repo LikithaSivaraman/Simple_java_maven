@@ -1,6 +1,8 @@
 package com.example;
 
 public class App {
+    
+/***main section starts.*/
 
     public static void main(String[] args) {
 
