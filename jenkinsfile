@@ -3,6 +3,9 @@ pipeline {
     agent {
       label 'Agent1'
     }
+    environment {
+        APP_VERSION = '4.0.$BUILD_NUMBER'
+    }
     tools {
       maven 'Maven'
      }   
@@ -12,7 +15,7 @@ pipeline {
         {
             steps {
                 sh 'mvn clean package'
-                echo "$BUILD_NUMBER & $BUILD_ID"
+                echo "$BUILD_NUMBER and $BUILD_ID"
             }
 
         }
@@ -21,18 +24,21 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
+            post{
+             success {
+                archiveArtifacts artifacts: '**/target/*.jar'
+             }
+            }
         }
         stage ("Deploy")
         {
-            
-            when {
-               branch 'xxx'
-            }
-            steps {
+             steps {
              echo "Deploying to production"
-        }
+             echo "Appversion= $APP_VERSION"
+             }
+             }
 
-        }    
+            
         
 
     }
